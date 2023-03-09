@@ -1,5 +1,6 @@
 <?php
 
+use App\Kategoria;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -14,9 +15,14 @@ class CreateKategoriasTable extends Migration
     public function up()
     {
         Schema::create('kategorias', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->bigIncrements('id');
+            $table->string('nev');
         });
+
+        Kategoria::create(['nev' => 'főétel']);
+        Kategoria::create(['nev' => 'leves']);
+        Kategoria::create(['nev' => 'édesség']);
+        Kategoria::create(['nev' => 'saláta']);
     }
 
     /**
