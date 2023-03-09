@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 //KategoriaController
@@ -23,8 +23,8 @@ Route::post('/kategorias', [KategoriaController::class, 'store']);
 Route::put('/kategorias/{id}', [KategoriaController::class, 'update']);
 
 //ReceptController
-Route::get('/receps', [ReceptController::class, 'index']);
+Route::get('/recepts', [ReceptController::class, 'index']);
 Route::get('/recept/{id}', [ReceptController::class, 'show']);
-Route::delete('/receps/{id}', [ReceptController::class, 'destroy']);
-Route::post('/receps', [ReceptController::class, 'store']);
-Route::put('/receps/{id}', [ReceptController::class, 'update']);
+Route::delete('/recepts/{id}', [ReceptController::class, 'destroy']);
+Route::post('/recepts', [ReceptController::class, 'store']);
+Route::put('/recepts/{id}', [ReceptController::class, 'update']);
